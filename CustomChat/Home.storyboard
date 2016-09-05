@@ -151,7 +151,7 @@
         <!--Home-->
         <scene sceneID="a7t-Gw-vem">
             <objects>
-                <tabBarController storyboardIdentifier="homeView" title="Home" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YZv-9w-rUp" customClass="HomeViewController" customModule="CustomChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="homeView" title="Home" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YZv-9w-rUp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="LCA-Bq-r5w">
                         <autoresizingMask key="autoresizingMask"/>

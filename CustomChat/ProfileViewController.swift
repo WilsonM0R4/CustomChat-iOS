@@ -14,6 +14,7 @@ class ProfileViewController : UIViewController{
 	@IBOutlet weak var imageContainer: UIView!
 	
 	var profileImageView : UIImageView!
+	var database = FirebaseHelper.getDatabaseInstance()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -38,6 +39,7 @@ class ProfileViewController : UIViewController{
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 	}
+	
 	
 	
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseDatabase
 import UIKit
 
 protocol RepositoryProtocol {
@@ -15,6 +16,10 @@ protocol RepositoryProtocol {
 }
 
 class FirebaseHelper {
+	
+	let USER_EXTRA_DATA_KEY = "user_extra_data"
+	let CHATS_KEY = "chats"
+	let CONTACTS_KEY = "contacts"
 	
 	var loginDelegate : RepositoryProtocol?
 	
@@ -106,6 +111,10 @@ class FirebaseHelper {
 			islogedIn = false
 		}
 		return islogedIn
+	}
+	
+	static func getDatabaseInstance()->FIRDatabaseReference{
+		return FIRDatabase.database().reference()
 	}
 	
 }

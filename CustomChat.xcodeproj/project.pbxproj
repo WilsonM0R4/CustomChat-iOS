@@ -15,7 +15,6 @@
 		2708561C1D592E1E00BD65D5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708561B1D592E1E00BD65D5 /* RegisterViewController.swift */; };
 		2708561F1D59350900BD65D5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708561E1D59350800BD65D5 /* FirebaseHelper.swift */; };
 		270856211D593CAB00BD65D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 270856201D593CAB00BD65D5 /* GoogleService-Info.plist */; };
-		270C8E001D63AD7200103E4D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C8DFF1D63AD7200103E4D /* HomeViewController.swift */; };
 		270C8E021D63AD8500103E4D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C8E011D63AD8500103E4D /* Home.storyboard */; };
 		270C8E131D63B57F00103E4D /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 270C8E051D63B57F00103E4D /* Contents.json */; };
 		270C8E141D63B57F00103E4D /* ic_account_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 270C8E061D63B57F00103E4D /* ic_account_circle.png */; };
@@ -48,7 +47,6 @@
 		2708561B1D592E1E00BD65D5 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2708561E1D59350800BD65D5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		270856201D593CAB00BD65D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "CustomChat/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		270C8DFF1D63AD7200103E4D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		270C8E011D63AD8500103E4D /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		270C8E051D63B57F00103E4D /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		270C8E061D63B57F00103E4D /* ic_account_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_account_circle.png; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 		270C8DFE1D63AD2800103E4D /* home */ = {
 			isa = PBXGroup;
 			children = (
-				270C8DFF1D63AD7200103E4D /* HomeViewController.swift */,
 				270C8E211D63BB5D00103E4D /* ContactsViewController.swift */,
 				270C8E231D63BC0A00103E4D /* ProfileViewController.swift */,
 				270C8E011D63AD8500103E4D /* Home.storyboard */,
@@ -345,7 +342,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				270C8E001D63AD7200103E4D /* HomeViewController.swift in Sources */,
 				270C8E221D63BB5D00103E4D /* ContactsViewController.swift in Sources */,
 				2708561F1D59350900BD65D5 /* FirebaseHelper.swift in Sources */,
 				2708561C1D592E1E00BD65D5 /* RegisterViewController.swift in Sources */,
