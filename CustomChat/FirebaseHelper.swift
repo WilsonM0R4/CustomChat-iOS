@@ -25,7 +25,7 @@ class FirebaseHelper {
 	
 	func firebaseRegister(email: String, password:String,username:String, registerController:RegisterViewController)->String{
 		
-		var success = false
+		//var success = false
 		var registeredUser : String = ""
 		
 		if(!(email.isEmpty) && !(password.isEmpty)){
@@ -50,7 +50,7 @@ class FirebaseHelper {
 						
 						userDefaults.setObject(registeredUser, forKey: RegisterViewController().CURRENT_USER_KEY)
 						
-						success = true
+						//success = true
 					}else if(error != nil){
 						print("something goes wrong, error is \(error!.userInfo.description)")
 						
@@ -59,7 +59,7 @@ class FirebaseHelper {
 						messageAlert = "no pudimos crear tu cuenta, debido a que \(errorMessage.localizedDescription) Por favor, intentalo de nuevo"
 						
 						actionType = false
-						success = false
+						//success = false
 						
 					}else{
 						print("failure, something goes wrong, but no idea what it is")
@@ -68,7 +68,7 @@ class FirebaseHelper {
 						messageAlert = "no pudimos crear tu cuenta, debido a que tenemos un error desconocido, por favor intentalo de nuevo"
 						
 						actionType = false
-						success = false
+						//success = false
 					}
 					
 					registerController.presentAlertToUser(titleAlert, messageContent: messageAlert, actionTitle: titleAction, actionType: actionType, parentViewController: registerController)
