@@ -36,7 +36,7 @@ class ProfileViewController : UIViewController {
 		profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2
 		profileImageView.image = UIImage(named: "profile_icon_9")
 		
-		cellsForTable = populateTableCellsArray(cellsForTable,tableView: tableConfig)
+		//cellsForTable = populateTableCellsArray(cellsForTable,tableView: tableConfig)
 		
 		self.view.addSubview(profileImageView)
 	}
@@ -47,24 +47,29 @@ class ProfileViewController : UIViewController {
 	
 	func populateTableCellsArray(array : NSMutableArray, tableView : UITableView) -> NSMutableArray{
 		
-		let reuseId = "prototypeCell"
-		
-		var cell1 = tableView.dequeueReusableCellWithIdentifier(reuseId)
-		var cell2 = tableView.dequeueReusableCellWithIdentifier(reuseId)
-		var cell3 = tableView.dequeueReusableCellWithIdentifier(reuseId)
-		var cell4 = tableView.dequeueReusableCellWithIdentifier(reuseId)
-		
-		cell1?.imageView?.image = UIImage.init(imageLiteral: "ic_mode_editing.png")
-		cell1?.textLabel?.text = "Editar perfil"
-		
-		cell2?.imageView?.image = UIImage.init(imageLiteral: "ic_mood.png")
-		cell2?.textLabel?.text = "Estado"
-		
-		cell3?.imageView?.image = UIImage.init(imageLiteral: "ic_person.png")
-		cell3?.textLabel?.text = "Disponibilidad"
-		
-		//cell4?.imageView?image
-		
+//		let reuseId = "prototypeCell"
+//		
+//		let cell1 = tableView.dequeueReusableCellWithIdentifier(reuseId)
+//		let cell2 = tableView.dequeueReusableCellWithIdentifier(reuseId)
+//		let cell3 = tableView.dequeueReusableCellWithIdentifier(reuseId)
+//		let cell4 = tableView.dequeueReusableCellWithIdentifier(reuseId)
+//		
+//		cell1?.imageView?.image = UIImage.init(imageLiteral: "ic_mode_editing.png")
+//		cell1?.textLabel?.text = "Editar perfil"
+//		
+//		cell2?.imageView?.image = UIImage.init(imageLiteral: "ic_mood.png")
+//		cell2?.textLabel?.text = "Estado"
+//		
+//		cell3?.imageView?.image = UIImage.init(imageLiteral: "ic_person.png")
+//		cell3?.textLabel?.text = "Disponibilidad"
+//		
+//		cell4?.imageView?.image = UIImage.init(imageLiteral: "sign_out.png")
+//		cell4?.textLabel?.text = "Cerrar sesión"
+//		
+//		array.addObject(cell1!)
+//		array.addObject(cell2!)
+//		array.addObject(cell3!)
+//		array.addObject(cell4!)
 		
 		return array
 	}
@@ -79,15 +84,12 @@ class ProfileViewController : UIViewController {
 		return 1;
 	}
 	
-	func tableView(tableView: UITableView, nuberOfRowsInSection section:Int)->Int {
-		return 3;
-	}
-	
-	func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell {
-		
-		var cell : UITableViewCell = UITableViewCell()
-		
-		
-		return cell
-	}
+//	func tableView(tableView: UITableView, nuberOfRowsInSection section:Int)->Int {
+//		return cellsForTable.count;
+//	}
+//	
+//	func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath)->UITableViewCell {
+//		
+//		return cellsForTable.objectAtIndex(indexPath.row) as! UITableViewCell
+//	}
 }
