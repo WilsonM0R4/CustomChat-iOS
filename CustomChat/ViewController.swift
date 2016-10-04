@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CustomChat
+import CustomChat	
 
 class ViewController: UIViewController,RepositoryProtocol{
 
@@ -20,9 +20,10 @@ class ViewController: UIViewController,RepositoryProtocol{
 	let NO_USER_KEY = "no user"
 	var repositoryHelper : FirebaseHelper?
 	var registerView : RegisterViewController?
+	let loaderTag = 2010
+	private let loader : UIActivityIndicatorView! = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+	private let loaderView = UIView(frame: CGRectMake(0,0,UIWindow().frame.size.width,UIWindow().frame.size.height))
 	@IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-	
-	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -31,6 +32,9 @@ class ViewController: UIViewController,RepositoryProtocol{
 		repositoryHelper = FirebaseHelper()
 		repositoryHelper?.loginDelegate = self;
 		registerView = RegisterViewController()
+		
+		loader.frame = CGRectMake(0, 0, 200, 200)
+		loader.center = UIWindow().center
 		
 		let session :Bool
 		session = (repositoryHelper?.checkSessionStatus())!
@@ -87,12 +91,15 @@ class ViewController: UIViewController,RepositoryProtocol{
 	
 	@IBAction func loginPressed(sender: AnyObject) {
 		repositoryHelper?.firebaseLogin(tfEmail.text!, password: tfPassword.text!)
+		self.view.addSubview(loader)
+		
+		showLoader()
 	}
 	
 	func onLoginSuccess(email: String) {
 		print("received user from auth is \(email)")
-		
-		self.loadHomeVC()
+		hideLoader()
+		loadHomeVC()
 		
 	}
 	
@@ -101,6 +108,19 @@ class ViewController: UIViewController,RepositoryProtocol{
 		let homeView = storyboard.instantiateViewControllerWithIdentifier("homeView")
 		
 		self.presentViewController(homeView, animated: true, completion: nil)
+	}
+	
+	func showLoader(){
+		loaderView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
+		loaderView.tag = loaderTag
+		self.view.addSubview(loaderView)
+		loader.startAnimating()
+	}
+	
+	func hideLoader(){
+		loader.stopAnimating()
+		loader.removeFromSuperview()
+		loaderView.removeFromSuperview()
 	}
 	
 }

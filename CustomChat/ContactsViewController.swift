@@ -9,16 +9,15 @@
 import Foundation
 import UIKit
 
-class ContactsViewController : UIViewController{
-	
+class ContactsViewController : UIViewController {
+			
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 	}
 	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 	}
-	
-	
 	
 }

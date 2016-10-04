@@ -100,6 +100,10 @@ class FirebaseHelper {
 		
 	}
 	
+	static func signOut(){
+		try! FIRAuth.auth()!.signOut()
+	}
+	
 	func checkSessionStatus()->Bool{
 		
 		let user = FIRAuth.auth()?.currentUser
