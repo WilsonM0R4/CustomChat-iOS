@@ -20,6 +20,7 @@ class FirebaseHelper {
 	let USER_EXTRA_DATA_KEY = "user_extra_data"
 	let CHATS_KEY = "chats"
 	let CONTACTS_KEY = "contacts"
+	public static let USER_EXTRA_DATA_PATH = "user_extra_data"
 	
 	var loginDelegate : RepositoryProtocol?
 	
@@ -30,7 +31,7 @@ class FirebaseHelper {
 		
 		if(!(email.isEmpty) && !(password.isEmpty)){
 			if((email.characters.count >= 6) && (email.characters.count >= 6)){
-				FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user:FIRUser?, error:NSError?) in
+				FIRAuth.auth()?.createUser(withEmail:email, password: password, completion: { (user, error) in
 					
 					var titleAlert : String
 					var messageAlert : String
@@ -46,13 +47,13 @@ class FirebaseHelper {
 						
 						registeredUser = user!.email!
 						
-						let userDefaults = NSUserDefaults.standardUserDefaults()
+						let userDefaults = UserDefaults.standard
 						
-						userDefaults.setObject(registeredUser, forKey: RegisterViewController().CURRENT_USER_KEY)
+						userDefaults.set(registeredUser, forKey: RegisterViewController().CURRENT_USER_KEY)
 						
 						//success = true
 					}else if(error != nil){
-						print("something goes wrong, error is \(error!.userInfo.description)")
+						print("something goes wrong, error is \(error.debugDescription)")
 						
 						titleAlert = "Oops!"
 						let errorMessage = error! as NSError
@@ -84,16 +85,16 @@ class FirebaseHelper {
 	}		
 	
 	func login(email : String, password : String){
-		firebaseLogin(email, password: password)
+		firebaseLogin(email: email, password: password)
 	}
 	
 	func firebaseLogin(email :String, password:String){
 		print("email \(email), password \(password)")
 		
-		FIRAuth.auth()?.signInWithEmail(email, password: password, completion: { (user :FIRUser?, error :NSError?) in
+		FIRAuth.auth()?.signIn(withEmail:email, password: password, completion: { (user, error) in
 			
 			if(user != nil && !((user?.email?.isEmpty)!)){
-				self.loginDelegate!.onLoginSuccess((user?.email)!)
+				self.loginDelegate!.onLoginSuccess(email:user!.email!)
 			}
 			
 		})
@@ -121,4 +122,7 @@ class FirebaseHelper {
 		return FIRDatabase.database().reference()
 	}
 	
+	static func getCurrentUserReference()->FIRUser{
+		return (FIRAuth.auth()?.currentUser)!
+	}
 }

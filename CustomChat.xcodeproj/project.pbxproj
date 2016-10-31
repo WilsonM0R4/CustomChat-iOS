@@ -15,6 +15,7 @@
 		2708561C1D592E1E00BD65D5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708561B1D592E1E00BD65D5 /* RegisterViewController.swift */; };
 		2708561F1D59350900BD65D5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708561E1D59350800BD65D5 /* FirebaseHelper.swift */; };
 		270856211D593CAB00BD65D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 270856201D593CAB00BD65D5 /* GoogleService-Info.plist */; };
+		2708C4631DB02028006715CE /* splash_test.png in Resources */ = {isa = PBXBuildFile; fileRef = 2708C4621DB02028006715CE /* splash_test.png */; };
 		270C8E021D63AD8500103E4D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C8E011D63AD8500103E4D /* Home.storyboard */; };
 		270C8E131D63B57F00103E4D /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 270C8E051D63B57F00103E4D /* Contents.json */; };
 		270C8E141D63B57F00103E4D /* ic_account_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 270C8E061D63B57F00103E4D /* ic_account_circle.png */; };
@@ -75,6 +76,7 @@
 		2708561B1D592E1E00BD65D5 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2708561E1D59350800BD65D5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		270856201D593CAB00BD65D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "CustomChat/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2708C4621DB02028006715CE /* splash_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_test.png; sourceTree = "<group>"; };
 		270C8E011D63AD8500103E4D /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		270C8E051D63B57F00103E4D /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		270C8E061D63B57F00103E4D /* ic_account_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_account_circle.png; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		270C8E031D63B57F00103E4D /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				2708C4621DB02028006715CE /* splash_test.png */,
 				271150A61D81BAB7002C87B5 /* ic_account_circle.imageset */,
 				271150AB1D81BAB7002C87B5 /* ic_chat_bubble.imageset */,
 				271150B01D81BAB7002C87B5 /* ic_contacts.imageset */,
@@ -364,6 +367,8 @@
 				TargetAttributes = {
 					270856041D5926FA00BD65D5 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = R25C8V8UCD;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -434,6 +439,7 @@
 				270C8E1B1D63B57F00103E4D /* Contents.json in Resources */,
 				271150D61D81BAB7002C87B5 /* ic_person_2x.png in Resources */,
 				271150C31D81BAB7002C87B5 /* Contents.json in Resources */,
+				2708C4631DB02028006715CE /* splash_test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,10 +622,12 @@
 			baseConfigurationReference = 493EBC55EB5ED8F14493F1BD /* Pods-CustomChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R25C8V8UCD;
 				INFOPLIST_FILE = CustomChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.wilson.customchat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -628,10 +636,12 @@
 			baseConfigurationReference = 25D2A8BBB8A86EE5CDADB940 /* Pods-CustomChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R25C8V8UCD;
 				INFOPLIST_FILE = CustomChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.wilson.customchat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

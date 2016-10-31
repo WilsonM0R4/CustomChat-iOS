@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class User : NSObject{
+open class User : NSObject{
 
 	var userEmail : String!
 	var username : String!
@@ -33,20 +33,26 @@ public class User : NSObject{
 	}
 	
 	//setters
-	func setStringUsername(username: String){
+	func setStringUsername(_ username: String){
 		self.username = username
 	}
 	
-	func setStringUserEmail(userEmail: String){
+	func setStringUserEmail(_ userEmail: String){
 		self.userEmail = userEmail
 	}
 	
-	func serStringUserState(userState: String){
+	func serStringUserState(_ userState: String){
 		self.userState = userState
 	}
 	
-	func setStringUserProfileIamgePath(imagePath: String){
+	func setStringUserProfileIamgePath(_ imagePath: String){
 		self.userProfileImagePath = imagePath
 	}
 	
+	public static func formatEmail(email :String)->String{
+		var formattedEmail: String = email.replacingOccurrences(of: "@", with: "")
+		formattedEmail = formattedEmail.replacingOccurrences(of: ".", with: "")
+		
+		return formattedEmail
+	}
 }

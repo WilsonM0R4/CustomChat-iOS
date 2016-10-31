@@ -27,29 +27,44 @@ class ProfileViewController : UIViewController, UITableViewDataSource, UITableVi
 		tableConfig.delegate = self
 		tableConfig.dataSource = self
 		
-		profileImageView = UIImageView(frame: CGRectMake(0, 0, imageContainer.frame.size.height, imageContainer.frame.size.height))
-		profileImageView.image = UIImage.init(imageLiteral: "profile_icon_9.png")
-		profileImageView.backgroundColor = UIColor.blackColor()
-		profileImageView.center = CGPointMake(UIWindow.init().frame.size.width/2, imageContainer.frame.size.height/2)
+		profileImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: imageContainer.frame.size.height, height: imageContainer.frame.size.height))
+		profileImageView.image = UIImage.init(imageLiteralResourceName: "profile_icon_9.png")
+		profileImageView.backgroundColor = UIColor.black
+		profileImageView.center = CGPoint(x: UIWindow.init().frame.size.width/2, y: imageContainer.frame.size.height/2)
 		imageContainer.addSubview(profileImageView)
 		let array = NSArray(array: ["editar perfil","estado","disponibilidad","cerrar sesión"])
 		
-		cellsForTable.addObjectsFromArray(array as [AnyObject])
+		cellsForTable.addObjects(from: array as [AnyObject])
 		
 	}
 	
-	override func viewWillAppear(animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+	}
+	
+	/**
+	* get data from firebase
+	**/
+	
+	func getUserDataFromCloud(){
+		var reference = database.child(FirebaseHelper.USER_EXTRA_DATA_PATH).child(User.formatEmail(email: FirebaseHelper.getCurrentUserReference().email!))
+			
+		/*reference.observe(FIR	DataEventType.value, with: { (snapshot) in
+			let postDict = snapshot.value as! [String : AnyObject]
+			// ...
+		})*/
+		
+		
 	}
 	
 	/**
 	*	table view delegate and datasource methods
 	**/
 	
-	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		print("have selected row at index \(cellsForTable.objectAtIndex(indexPath.row))")
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		print("have selected row at index \(cellsForTable.object(at: (indexPath as NSIndexPath).row))")
 		
-		switch indexPath.row {
+		switch (indexPath as NSIndexPath).row {
 		case 0:
 			
 			break
@@ -59,7 +74,7 @@ class ProfileViewController : UIViewController, UITableViewDataSource, UITableVi
 			break
 		case 3:
 			FirebaseHelper.signOut()
-			self.dismissViewControllerAnimated(true, completion: nil)
+			self.dismiss(animated: true, completion: nil)
 			break
 		default:
 			
@@ -69,19 +84,19 @@ class ProfileViewController : UIViewController, UITableViewDataSource, UITableVi
 		
 	}
 	
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 	
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return cellsForTable.count
 	}
 	
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell :UITableViewCell!
 		
-		cell = tableView.dequeueReusableCellWithIdentifier("prototypeCell")
-		cell.textLabel?.text = cellsForTable.objectAtIndex(indexPath.row) as? String
+		cell = tableView.dequeueReusableCell(withIdentifier: "prototypeCell")
+		cell.textLabel?.text = cellsForTable.object(at: (indexPath as NSIndexPath).row) as? String
 		
 		return cell
 	}
